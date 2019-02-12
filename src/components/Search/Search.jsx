@@ -1,4 +1,6 @@
 import React from 'react'
+
+import Graph from './Graph/Graph'
 import SelectionGroup from './Selects/SelectionGroup'
 
 import {onUpdateGetKeyList} from '../../lib/selects'
@@ -61,8 +63,11 @@ export default class Search extends React.Component{
           <div className="col-12">
             <h3>Search</h3>
           </div>
-          <div className="col-6">
+          <div className="col-4">
             <SelectionGroup data={data} selection={selection} onUpdateSelect={this.onUpdateSelect.bind(this)} />
+          </div>
+          <div className="col-8">
+            <Graph />
           </div>
         </div>
       </div>
