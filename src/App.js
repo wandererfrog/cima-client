@@ -58,11 +58,11 @@ class App extends Component {
           onSetOpen={this.onSetSidebarOpen}
           styles={styles}
         >
+          {
+            (!this.state.sidebarDocked ) ?
+            <i onClick={this.toggleMenu.bind(this)} className={`fal ${(this.state.sidebarOpen) ? 'fa-times' : 'fa-align-left'} menu-toggle-btn`}></i> : null
+          }
           <Switch>
-            {
-              (!this.state.sidebarDocked ) ?
-              <i onClick={this.toggleMenu.bind(this)} className={`fal ${(this.state.sidebarOpen) ? 'fa-times' : 'fa-align-left'} menu-toggle-btn`}></i> : null
-            }
             <Route exact path="/dashboard" component={Dashboard} />
             <Route path="/search" component={Search} />
             <Route path="/about" component={About} />
