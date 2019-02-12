@@ -7,7 +7,6 @@ class SelectItem extends Component {
 
     render() {
       const {title,data,name,onUpdateSelect,selection} = this.props
-      console.log(data);
       return (
         <div className="select-container">
           <div className="select-title">{title}</div>

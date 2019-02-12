@@ -1,7 +1,10 @@
 import React from 'react'
+import moment from 'moment'
 
 import Graph from './Graph/Graph'
 import SelectionGroup from './Selects/SelectionGroup'
+
+import './Search.css'
 
 import {onUpdateGetKeyList} from '../../lib/selects'
 
@@ -28,8 +31,11 @@ export default class Search extends React.Component{
         region : null,
         market : null,
         variety : null,
-        category : null
-      }
+        category : null,
+        from : moment(),
+        to : moment()
+      },
+      graphData : null
     }
   }
 
@@ -46,7 +52,6 @@ export default class Search extends React.Component{
 
   updateData(name){
     const newDataObj = onUpdateGetKeyList(name,this.state.data)
-    console.log(newDataObj);
     //Get data from API
     this.setState({
       data : newDataObj
@@ -55,8 +60,18 @@ export default class Search extends React.Component{
     })
   }
 
+  getGraphData(){
+    const {selection} = this.state
+
+    let requestData = Object.assign({},selection)
+    //Transform moment dates into string
+    requestData.from = requestData.from.format("YYYY/MM/DDTHH:MM:SS")
+    requestData.to = requestData.to.format("YYYY/MM/DDTHH:MM:SS")
+    console.log("GraphData for:\n",requestData);
+  }
+
   render(){
-    const {selection,data} = this.state
+    const {selection,data,graphData} = this.state
     return (
       <div className="container">
         <div className="row">
@@ -65,9 +80,10 @@ export default class Search extends React.Component{
           </div>
           <div className="col-4">
             <SelectionGroup data={data} selection={selection} onUpdateSelect={this.onUpdateSelect.bind(this)} />
+            <button className="search-button" onClick={this.getGraphData.bind(this)}>Search</button>
           </div>
           <div className="col-8">
-            <Graph />
+            <Graph data={graphData} />
           </div>
         </div>
       </div>

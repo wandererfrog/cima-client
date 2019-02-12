@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+
 import SelectItem from './SelectItem'
+import DatePicker from './DatePicker'
+
 import './Selects.css'
 
 class SelectionGroup extends Component {
@@ -13,6 +16,9 @@ class SelectionGroup extends Component {
         <SelectItem title="Variety" data={data.variety} name="variety" selection={selection.species} onUpdateSelect={onUpdateSelect.bind(this)} />
         <SelectItem title="Category" data={data.category} name="category" selection={selection.species} onUpdateSelect={onUpdateSelect.bind(this)} />
         <SelectItem title="Region" data={data.region} name="region" selection={selection.species} onUpdateSelect={onUpdateSelect.bind(this)} />
+
+        <DatePicker selection={selection.from} name="from" onUpdateSelect={onUpdateSelect.bind(this)} title="From" />
+        <DatePicker selection={selection.to} minimumDate={selection.from} name="to" onUpdateSelect={onUpdateSelect.bind(this)} title="To" />
       </div>
     );
   }
