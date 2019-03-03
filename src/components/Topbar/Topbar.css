@@ -1,0 +1,63 @@
+
+.topbar-container{
+  position: fixed;
+  top:0px;
+  width:100%;
+  height: 46px;
+  background-color: #2a2d34;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: height 0.5s ease-out;
+  z-index: 999999;
+}
+
+.topbar-item-icon{
+}
+
+.topbar-item-text{
+  color: rgba(243, 237, 231, 0.87);
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  min-width: 100px;
+  text-align: center;
+}
+
+.topbar-item-text:hover{
+  color: #999999;
+}
+
+.topbar-icon-active{
+
+}
+
+.topbar-item-text-active{
+  color: #abdf7d;
+  border-bottom: 1px solid;
+}
+
+.topbar-logo{
+  height: 0px;
+  width: 0px;
+  transition: width 0.5s ease-out, height 0.5s ease-out;
+}
+
+.topbar-logo-img{
+  width: 100%;
+}
+
+/* STICKY */
+.sticky{
+  height: 82px;
+  transition: height 0.5s ease-out;
+}
+
+.sticky-logo{
+  height: 45px;
+  width: 45px;
+  transition: width 0.5s ease-out, height 0.5s ease-out;
+}

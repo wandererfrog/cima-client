@@ -1,0 +1,50 @@
+.cima-section{
+  margin-top: 46px;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #1f2024b3;
+}
+
+.cima-section-logo{
+  width: 52px;
+}
+
+.cima-title{
+  font-size: 62px;
+  color: #f3ede7 !important;
+  font-weight: 200;
+}
+
+.cima-subtitle{
+  font-size: 20px;
+  color: #b9b9b9 !important;
+  width: 450px;
+  text-align: center;
+  font-weight: 200;
+}
+
+.cima-section-button{
+  padding: .3em 1em;
+  border: 2px solid;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 3px;
+  background-color: transparent;
+  color: #abdf7d !important;
+  transition: border 0.2s linear;
+}
+
+.cima-section-button:hover{
+  border: 2px solid rgba(0,0,0,0);
+  transition: border 0.2s linear;
+}
+
+/* @keyframes bordercolor {
+  100% {border-color: transparent;}
+} */
