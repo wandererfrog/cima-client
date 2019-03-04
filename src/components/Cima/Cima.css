@@ -1,11 +1,14 @@
 .cima-section{
-  margin-top: 46px;
-  height: 600px;
+  height: 720px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   background-color: #1f2024b3;
+}
+
+.cima-section-mt{
+  margin-top: 46px;
 }
 
 .cima-section-logo{
@@ -21,7 +24,7 @@
 .cima-subtitle{
   font-size: 20px;
   color: #b9b9b9 !important;
-  width: 450px;
+  max-width: 420px;
   text-align: center;
   font-weight: 200;
 }
@@ -45,6 +48,14 @@
   transition: border 0.2s linear;
 }
 
-/* @keyframes bordercolor {
-  100% {border-color: transparent;}
-} */
+.features-title{
+  font-size: 23px;
+  text-align: center;
+}
+
+.features-subtitle{
+  font-size: 16px;
+  text-align: center;
+  font-weight: 200;
+  margin-bottom: 20px;
+}
