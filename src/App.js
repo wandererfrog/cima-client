@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import {Router, Route,Switch } from "react-router-dom";
+import React, { Component } from "react";
+import { Router, Route, Switch } from "react-router-dom";
 
-import './App.css';
+import "./App.css";
 
-import history from './lib/history';
+import history from "./lib/history";
 
-import Topbar from './components/Topbar/Topbar';
-import Cima from './components/Cima/Cima';
-import Search from './components/Search/Search';
-import About from './components/About/About';
+import Topbar from "./components/Topbar/Topbar";
+import Cima from "./components/Cima/Cima";
+import Search from "./components/Search/Search";
+import About from "./components/About/About";
 
 class App extends Component {
   constructor(props) {
@@ -19,15 +19,15 @@ class App extends Component {
   render() {
     return (
       <Router history={history}>
-      <div className="app-container">
-        <Topbar />
-        <Switch>
-          <Route path="/cima" component={Cima} />
-          <Route path="/app" component={Search} />
-          <Route path="/about" component={About} />
-        </Switch>
-      </div>
-     </Router>
+        <div className="app-container">
+          <Topbar />
+          <Switch>
+            <Route path="/cima" component={Cima} />
+            <Route path="/app" component={Search} />
+            <Route path="/about" component={About} />
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }

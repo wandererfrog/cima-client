@@ -9,8 +9,8 @@ export default {
   },
   sidebar: {
     zIndex: 2,
-    width: '80%',
-    maxWidth : "220px",
+    width: "80%",
+    maxWidth: "220px",
     position: "absolute",
     top: 0,
     bottom: 0,
