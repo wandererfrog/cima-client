@@ -13,9 +13,9 @@ class SelectionGroup extends Component {
       <div>
         <SelectItem title="Groups" data={data.groups} name="groups" selection={selection.groups} onUpdateSelect={onUpdateSelect.bind(this)} />
         <SelectItem title="Species" data={data.species} name="species" selection={selection.species} onUpdateSelect={onUpdateSelect.bind(this)} />
-        <SelectItem title="Variety" data={data.variety} name="variety" selection={selection.species} onUpdateSelect={onUpdateSelect.bind(this)} />
-        <SelectItem title="Category" data={data.category} name="category" selection={selection.species} onUpdateSelect={onUpdateSelect.bind(this)} />
-        <SelectItem title="Region" data={data.region} name="region" selection={selection.species} onUpdateSelect={onUpdateSelect.bind(this)} />
+        <SelectItem title="Variety" data={data.variety} name="variety" selection={selection.variety} onUpdateSelect={onUpdateSelect.bind(this)} />
+        <SelectItem title="Category" data={data.category} name="category" selection={selection.category} onUpdateSelect={onUpdateSelect.bind(this)} />
+        <SelectItem title="Region" data={data.region} name="region" selection={selection.region} onUpdateSelect={onUpdateSelect.bind(this)} />
 
         <DatePicker selection={selection.from} name="from" onUpdateSelect={onUpdateSelect.bind(this)} title="From" />
         <DatePicker selection={selection.to} minimumDate={selection.from} name="to" onUpdateSelect={onUpdateSelect.bind(this)} title="To" />

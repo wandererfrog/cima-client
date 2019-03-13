@@ -5,7 +5,7 @@ import './Cima.css'
 
 import AnimatedBtn from '../UIComponents/AnimatedBtn/AnimatedBtn'
 import FeatureEntry from './FeatureEntry/FeatureEntry'
-
+import Who from './Who/Who'
 
 const features = [
   {icon : "bar-chart-2" , title : "Visualize as cotas" , text : "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."},
@@ -15,7 +15,7 @@ const features = [
 ]
 
 const who = [
-  { photo : ""}
+  { photo : "" , name :  "", title: "" ,bio : "" }
 ]
 
 export default class Cima extends React.Component{
@@ -64,11 +64,11 @@ export default class Cima extends React.Component{
             <div className="container">
               <div className="features-title">WHO WE ARE:</div>
               <div className="features-subtitle">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</div>
-              {
+              {/* {
                 who.map((w)=>{
-                  // return <Who who={w} />
+                  return <Who who={w} />
                 })
-              }
+              } */}
             </div>
           </div>
         </div>

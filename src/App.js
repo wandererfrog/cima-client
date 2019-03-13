@@ -23,7 +23,7 @@ class App extends Component {
         <Topbar />
         <Switch>
           <Route path="/cima" component={Cima} />
-          <Route path="/search" component={Search} />
+          <Route path="/app" component={Search} />
           <Route path="/about" component={About} />
         </Switch>
       </div>

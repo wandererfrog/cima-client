@@ -1,40 +1,35 @@
-export function onUpdateGetKeyList(name,data){
-  //On group change
+import { 
+  getGroupState, 
+  getSpeciesState, 
+  getVarietiesState, 
+  getCategoriesState,
+  getRegionsState,
+  getMerketsState
+} from './stateFunc';
+
+export async function onUpdateGetKeyList(name,selection,data){
+
   switch (name) {
     case "groups":
-      return Object.assign({},data , {
-         species : null,
-         variety : null,
-         category : null,
-         market :  null,
-         region : null
-       })
+      return getGroupState(selection,data)
+
     case "species":
-      return Object.assign({},data , {
-         variety : null,
-         category : null,
-         market :  null,
-         region : null
-       })
+      return getSpeciesState(selection,data)
+
     case "variety":
-      return Object.assign({},data , {
-         category : null,
-         market :  null,
-         region : null
-       })
+      return getVarietiesState(selection,data)
+
     case "category":
-      return Object.assign({},data , {
-         market :  null,
-         region : null
-        })
+      return getCategoriesState(selection,data)
     case "region":
-      return Object.assign({},data , {
-         market :  null
-        })
+      return getRegionsState(selection,data)
     case "market":
-      return Object.assign({},data , {})
+      return getMerketsState(selection,data)
     default:
-      return data
+      return {
+        data : Object.assign({},data , {}),
+        selection : Object.assign({},selection , {})
+      }
   }
 
 }

@@ -6,6 +6,7 @@ import SelectionGroup from './Selects/SelectionGroup'
 
 import './Search.css'
 
+import * as apiCalls from '../../lib/api'
 import {onUpdateGetKeyList} from '../../lib/selects'
 
 export default class Search extends React.Component{
@@ -14,11 +15,7 @@ export default class Search extends React.Component{
     super(props)
     this.state={
       data : {
-        groups : [
-          { value: 'chocolate', label: 'Chocolate' },
-          { value: 'strawberry', label: 'Strawberry' },
-          { value: 'vanilla', label: 'Vanilla' }
-        ],
+        groups : [],
         species : null,
         region : null,
         market: null,
@@ -39,6 +36,15 @@ export default class Search extends React.Component{
     }
   }
 
+  async componentDidMount(){
+    const groups = await apiCalls.getGroups()
+    this.setState({
+      data : {
+        groups : groups.map( g => ({value : g.id, label : g.name}) )
+      }
+    })
+  }
+
   onUpdateSelect(name,evt){
     const newSelection = Object.assign({},this.state.selection)
     newSelection[name] = evt
@@ -50,24 +56,20 @@ export default class Search extends React.Component{
     })
   }
 
-  updateData(name){
-    const newDataObj = onUpdateGetKeyList(name,this.state.data)
+  async updateData(name){
+    const {selection, data} = this.state
+    const newStateObj = await onUpdateGetKeyList(name,selection,data)
     //Get data from API
-    this.setState({
-      data : newDataObj
-    },()=>{
-      console.log(this.state.data);
-    })
+    this.setState(newStateObj)
   }
 
   getGraphData(){
     const {selection} = this.state
-
-    let requestData = Object.assign({},selection)
-    //Transform moment dates into string
-    requestData.from = requestData.from.format("YYYY/MM/DDTHH:MM:SS")
-    requestData.to = requestData.to.format("YYYY/MM/DDTHH:MM:SS")
-    console.log("GraphData for:\n",requestData);
+    const cotas = apiCalls.getCotas(selection)
+    console.log("GraphData for:\n",cotas);
+    this.setState({
+      graphData : cotas
+    })
   }
 
   render(){

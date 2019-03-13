@@ -73,7 +73,11 @@ class Topbar extends React.Component{
     const {mobile} = this.state
     const path = history.location.pathname
 
-    const title = menuItems.find((i)=>{return i.path == path })
+    const title = menuItems.find((i)=>{return i.path === path })
+
+    if(path === '/app'){
+      return null
+    }
 
     if(!mobile){
       return (
