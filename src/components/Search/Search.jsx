@@ -1,79 +1,82 @@
-import React from 'react'
-import moment from 'moment'
+import React from "react";
+import moment from "moment";
 
-import Graph from './Graph/Graph'
-import SelectionGroup from './Selects/SelectionGroup'
+import Graph from "./Graph/Graph";
+import SelectionGroup from "./Selects/SelectionGroup";
 
-import './Search.css'
+import "./Search.css";
 
-import * as apiCalls from '../../lib/api'
-import {onUpdateGetKeyList} from '../../lib/selects'
+import * as apiCalls from "../../lib/api";
+import { onUpdateGetKeyList } from "../../lib/selects";
 
-export default class Search extends React.Component{
-
-  constructor(props){
-    super(props)
-    this.state={
-      data : {
-        groups : [],
-        species : null,
-        region : null,
+export default class Search extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: {
+        groups: [],
+        species: null,
+        region: null,
         market: null,
-        variety : null,
-        category : null
+        variety: null,
+        category: null
       },
-      selection : {
-        groups :null,
-        species : null,
-        region : null,
-        market : null,
-        variety : null,
-        category : null,
-        from : moment(),
-        to : moment()
+      selection: {
+        groups: null,
+        species: null,
+        region: null,
+        market: null,
+        variety: null,
+        category: null,
+        from: moment(),
+        to: moment()
       },
-      graphData : null
-    }
+      graphData: null
+    };
   }
 
-  async componentDidMount(){
-    const groups = await apiCalls.getGroups()
+  async componentDidMount() {
+    const groups = await apiCalls.getGroups();
     this.setState({
-      data : {
-        groups : groups.map( g => ({value : g.id, label : g.name}) )
+      data: {
+        groups: groups.map(g => ({ value: g.id, label: g.name }))
       }
-    })
+    });
   }
 
-  onUpdateSelect(name,evt){
-    const newSelection = Object.assign({},this.state.selection)
-    newSelection[name] = evt
+  onUpdateSelect(name, evt) {
+    const newSelection = Object.assign({}, this.state.selection);
+    newSelection[name] = evt;
 
-    this.setState({
-      selection : newSelection
-    },()=>{
-      this.updateData(name)
-    })
+    this.setState(
+      {
+        selection: newSelection
+      },
+      () => {
+        this.updateData(name);
+      }
+    );
   }
 
-  async updateData(name){
-    const {selection, data} = this.state
-    const newStateObj = await onUpdateGetKeyList(name,selection,data)
+  async updateData(name) {
+    const { selection, data } = this.state;
+    const newStateObj = await onUpdateGetKeyList(name, selection, data);
     //Get data from API
-    this.setState(newStateObj)
+    console.log("State:", newStateObj);
+    this.setState(newStateObj);
   }
 
-  getGraphData(){
-    const {selection} = this.state
-    const cotas = apiCalls.getCotas(selection)
-    console.log("GraphData for:\n",cotas);
+  async getGraphData() {
+    const { selection } = this.state;
+    const cotas = await apiCalls.getCotas(selection);
+    console.log("GraphData for:\n", cotas);
     this.setState({
-      graphData : cotas
-    })
+      graphData: cotas
+    });
   }
 
-  render(){
-    const {selection,data,graphData} = this.state
+  render() {
+    const { selection, data, graphData } = this.state;
     return (
       <div className="container">
         <div className="row">
@@ -81,14 +84,23 @@ export default class Search extends React.Component{
             <h3>Search</h3>
           </div>
           <div className="col-4">
-            <SelectionGroup data={data} selection={selection} onUpdateSelect={this.onUpdateSelect.bind(this)} />
-            <button className="search-button" onClick={this.getGraphData.bind(this)}>Search</button>
+            <SelectionGroup
+              data={data}
+              selection={selection}
+              onUpdateSelect={this.onUpdateSelect.bind(this)}
+            />
+            <button
+              className="search-button"
+              onClick={this.getGraphData.bind(this)}
+            >
+              Search
+            </button>
           </div>
           <div className="col-8">
             <Graph data={graphData} />
           </div>
         </div>
       </div>
-    )
+    );
   }
 }

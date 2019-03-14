@@ -1,5 +1,10 @@
 import * as apiCalls from "./api";
 
+/**
+ * Get new state when selecting a group from the dropdown
+ * @param {Object} selection
+ * @param {Object} data
+ */
 export async function getGroupState(selection, data) {
   let newData = {};
   let newSelection = {};
@@ -26,9 +31,15 @@ export async function getGroupState(selection, data) {
   };
 }
 
+/**
+ * Get new state when selecting a species from the dropdown
+ * @param {Object} selection
+ * @param {Object} data
+ */
 export async function getSpeciesState(selection, data) {
   let newData = {};
   let newSelection = {};
+
   newData = Object.assign({}, data, {
     variety: await apiCalls
       .getVarieties(selection.species.value)
