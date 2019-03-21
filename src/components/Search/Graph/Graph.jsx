@@ -14,27 +14,42 @@ import "./Graph.css";
 
 class Graph extends Component {
   render() {
-    const { data } = this.props;
+    let { data } = this.props;
     if (!data) return <h6>No data selected!</h6>;
 
+    data = data.map(d => {
+      d.date = d.date.split("T")[0];
+      return d;
+    });
     return (
       <div className="graph-container">
-        <ResponsiveContainer>
+        <ResponsiveContainer width={700}>
           <LineChart
-            width={600}
-            height={300}
-            data={this.parseGraphData()}
+            width={"100%"}
+            height={"100%"}
+            data={data}
             margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
           >
             <XAxis dataKey="date" />
             <YAxis />
             <CartesianGrid strokeDasharray="3 3" />
-            <Tooltip />
-            <Legend />
+
+            <Line
+              type="monotone"
+              dataKey="max"
+              stroke="#8884d8"
+              activeDot={{ r: 8 }}
+            />
             <Line
               type="monotone"
               dataKey="mean"
-              stroke="#8884d8"
+              stroke="#cf6dcd"
+              activeDot={{ r: 8 }}
+            />
+            <Line
+              type="monotone"
+              dataKey="min"
+              stroke="#ff7887"
               activeDot={{ r: 8 }}
             />
           </LineChart>
