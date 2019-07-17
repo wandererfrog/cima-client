@@ -45,6 +45,8 @@ export default class Search extends React.Component {
   }
 
   onUpdateSelect(name, evt) {
+    if(!name)
+      console.log("Most provide a name attribute.");
     const newSelection = Object.assign({}, this.state.selection);
     newSelection[name] = evt;
 
@@ -83,22 +85,26 @@ export default class Search extends React.Component {
           <div className="col-12">
             <h3>Search</h3>
           </div>
-          <div className="col-4">
-            <SelectionGroup
-              data={data}
-              selection={selection}
-              onUpdateSelect={this.onUpdateSelect.bind(this)}
+        </div>
+        <div className="row">
+          <div className="col-12">
+              <SelectionGroup
+                data={data}
+                selection={selection}
+                onUpdateSelect={this.onUpdateSelect.bind(this)}
             />
             <button
-              className="search-button"
-              onClick={this.getGraphData.bind(this)}
+                className="search-button"
+                onClick={this.getGraphData.bind(this)}
             >
-              Search
+             Search
             </button>
           </div>
-          <div className="col-8">
-            <Graph data={graphData} />
           </div>
+          <div className="row">
+            <div className="col-8">
+              <Graph data={graphData} />
+            </div>
         </div>
       </div>
     );

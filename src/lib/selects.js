@@ -24,6 +24,7 @@ export async function onUpdateGetKeyList(name, selection, data) {
       return getRegionsState(selection, data);
     case "market":
       return getMerketsState(selection, data);
+      
     default:
       return {
         data: Object.assign({}, data, {}),
