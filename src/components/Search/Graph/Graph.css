@@ -1,4 +1,28 @@
 .graph-container {
   height: 360px;
-  width: 80%;
+  width: 100%;
+}
+
+.toggle-data-btn-on {
+  background-color: #bde07d;
+}
+.toggle-data-btn-off {
+  background-color: #f6f4f2;
+  color: #222222 !important;
+}
+
+.toggle-data-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.toggle-data-btn {
+  margin: 10px;
+  border: none;
+  width: 41px;
+  height: 28px;
+  border-radius: 3px;
+  color: #fff;
 }

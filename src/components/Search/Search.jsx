@@ -1,5 +1,4 @@
 import React from "react";
-import moment from "moment";
 
 import Graph from "./Graph/Graph";
 import SelectionGroup from "./Selects/SelectionGroup";
@@ -28,8 +27,8 @@ export default class Search extends React.Component {
         market: null,
         variety: null,
         category: null,
-        from: moment(),
-        to: moment()
+        from: "2018-01-01",
+        to: "2020-01-01"
       },
       graphData: null
     };
@@ -46,7 +45,12 @@ export default class Search extends React.Component {
 
   onUpdateSelect(name, evt) {
     const newSelection = Object.assign({}, this.state.selection);
-    newSelection[name] = evt;
+
+    if (name === "from" || name === "to") {
+      newSelection[name] = evt.target.value;
+    } else {
+      newSelection[name] = evt;
+    }
 
     this.setState(
       {
@@ -68,8 +72,19 @@ export default class Search extends React.Component {
 
   async getGraphData() {
     const { selection } = this.state;
+
+    if (
+      !selection.from ||
+      !selection.to ||
+      !selection.groups ||
+      !selection.species
+    )
+      return;
+
     const cotas = await apiCalls.getCotas(selection);
-    console.log("GraphData for:\n", cotas);
+
+    console.log(cotas);
+
     this.setState({
       graphData: cotas
     });
@@ -78,7 +93,7 @@ export default class Search extends React.Component {
   render() {
     const { selection, data, graphData } = this.state;
     return (
-      <div className="container">
+      <div className="container search-container">
         <div className="row">
           <div className="col-12">
             <h3>Search</h3>

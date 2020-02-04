@@ -1,59 +1,89 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import {
   LineChart,
   Line,
-  Legend,
   XAxis,
   YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer
+  ResponsiveContainer,
+  Tooltip
 } from "recharts";
 
+import ToggleData from "../ToggleData/ToggleData";
 import "./Graph.css";
 
-class Graph extends Component {
-  render() {
-    let { data } = this.props;
-    if (!data) return <h6>No data selected!</h6>;
+class Graph extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      filter: {
+        min: true,
+        max: true,
+        avg: true
+      }
+    };
+  }
 
-    data = data.map(d => {
+  onChange(field) {
+    const { filter } = this.state;
+    let change = {};
+
+    change[field] = !filter[field];
+    let newFilter = Object.assign({}, this.state.filter, change);
+    this.setState(Object.assign({}, this.state, { filter: newFilter }));
+  }
+
+  prepareData(data) {
+    return data.map(d => {
+      console.log(d);
       d.date = d.date.split("T")[0];
+      d.min = Math.round(d.min);
+      d.max = Math.round(d.max);
+      d.mean = Math.round(d.mean);
       return d;
     });
+  }
+
+  render() {
+    const { data } = this.props;
+    const { filter } = this.state;
+    if (!data) return <h6>No data selected!</h6>;
+
+    const newData = this.prepareData(data);
+
     return (
       <div className="graph-container">
-        <ResponsiveContainer width={700}>
+        <ResponsiveContainer width="100%" height={320}>
           <LineChart
-            width={"100%"}
-            height={"100%"}
-            data={data}
-            margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+            data={newData}
+            margin={{ top: 20, right: -90, left: 0, bottom: 0 }}
           >
-            <XAxis dataKey="date" />
-            <YAxis />
-            <CartesianGrid strokeDasharray="3 3" />
-
+            <XAxis dataKey="date" fontSize={10} />
+            <YAxis fontSize={10} />
+            <Tooltip />
             <Line
               type="monotone"
               dataKey="max"
-              stroke="#8884d8"
-              activeDot={{ r: 8 }}
-            />
-            <Line
-              type="monotone"
-              dataKey="mean"
-              stroke="#cf6dcd"
-              activeDot={{ r: 8 }}
+              stroke={`${filter.max ? "#e68c47" : "#e9e9e9"}`}
+              activeDot={{ r: 1 }}
             />
             <Line
               type="monotone"
               dataKey="min"
-              stroke="#ff7887"
-              activeDot={{ r: 8 }}
+              stroke={`${filter.min ? "#bde07d" : "#e9e9e9"}`}
+              activeDot={{ r: 1 }}
+            />
+            <Line
+              type="monotone"
+              dataKey="mean"
+              stroke={`${filter.avg ? "#4787e6" : "#e9e9e9"}`}
+              activeDot={{ r: 1 }}
             />
           </LineChart>
         </ResponsiveContainer>
+        <ToggleData
+          filter={this.state.filter}
+          onChange={this.onChange.bind(this)}
+        />
       </div>
     );
   }

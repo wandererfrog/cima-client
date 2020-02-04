@@ -113,8 +113,8 @@ export async function getCotas(selection) {
 
   if (selection.region) params["region_id"] = selection.region.value;
 
-  params["from"] = selection.from.format("YYYY/MM/DD");
-  params["to"] = selection.to.format("YYYY/MM/DD");
+  params["from"] = selection.from;
+  params["to"] = selection.to;
 
   try {
     const response = await axios.get(`${config.apiUrl}/products`, {

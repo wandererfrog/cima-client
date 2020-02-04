@@ -1,7 +1,10 @@
-.select-container{
+.select-container {
   margin-bottom: 18px;
 }
 
-.select-title{
-  margin-bottom: 7px
+.select-title {
+  margin-bottom: 7px;
+}
+
+.react-select-container {
 }
