@@ -1,4 +1,4 @@
-.cima-section{
+.cima-section {
   height: 720px;
   display: flex;
   justify-content: center;
@@ -7,21 +7,21 @@
   background-color: #1f2024b3;
 }
 
-.cima-section-mt{
+.cima-section-mt {
   margin-top: 46px;
 }
 
-.cima-section-logo{
+.cima-section-logo {
   width: 52px;
 }
 
-.cima-title{
+.cima-title {
   font-size: 62px;
   color: #f3ede7 !important;
   font-weight: 200;
 }
 
-.cima-subtitle{
+.cima-subtitle {
   font-size: 20px;
   color: #b9b9b9 !important;
   max-width: 420px;
@@ -29,8 +29,8 @@
   font-weight: 200;
 }
 
-.cima-section-button{
-  padding: .3em 1em;
+.cima-section-button {
+  padding: 0.3em 1em;
   border: 2px solid;
   font-size: 15px;
   font-weight: bold;
@@ -43,19 +43,23 @@
   transition: border 0.2s linear;
 }
 
-.cima-section-button:hover{
-  border: 2px solid rgba(0,0,0,0);
+.cima-section-button:hover {
+  border: 2px solid rgba(0, 0, 0, 0);
   transition: border 0.2s linear;
 }
 
-.features-title{
+.section-title {
   font-size: 23px;
   text-align: center;
 }
 
-.features-subtitle{
+.section-subtitle {
   font-size: 16px;
   text-align: center;
   font-weight: 200;
   margin-bottom: 20px;
+}
+
+.page-section {
+  min-height: 430px;
 }

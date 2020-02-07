@@ -34,7 +34,6 @@ class Graph extends React.Component {
 
   prepareData(data) {
     return data.map(d => {
-      console.log(d);
       d.date = d.date.split("T")[0];
       d.min = Math.round(d.min);
       d.max = Math.round(d.max);
