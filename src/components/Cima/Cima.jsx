@@ -5,6 +5,7 @@ import "./Cima.css";
 import Features from "./Features/Features";
 import About from "../About/About";
 import Who from "./Who/Who";
+import Footer from "../Footer/Footer";
 
 import AnimatedBtn from "../UIComponents/AnimatedBtn/AnimatedBtn";
 
@@ -55,6 +56,7 @@ export default class Cima extends React.Component {
         </Parallax>
         <About />
         <Who />
+        <Footer />
       </div>
     );
   }

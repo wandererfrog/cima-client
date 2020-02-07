@@ -10,7 +10,7 @@ function LinkBtn({ entry, onClick, path }) {
           to={entry.title}
           spy={true}
           smooth={true}
-          offset={-85}
+          offset={-80}
           duration={800}
         >
           {entry.title.toUpperCase()}
