@@ -37,7 +37,50 @@
   color: #f9f9f9;
 }
 
-.cima-footer-links {
+.cima-footer-info {
   height: 70%;
   background-color: #1e2126;
+  padding: 20px;
+}
+
+.cima-footer-brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cima-footer-brand-logo {
+  width: 36px;
+}
+
+.cima-footer-brand-name {
+}
+
+.cima-footer-brand-email {
+  color: #f9f9f9;
+  font-weight: 100;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.cima-footer-links-title {
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 11px;
+}
+
+.cima-footer-link {
+  font-size: 13px;
+  color: #bfbfbf;
+  font-weight: 200;
+}
+
+.footer-final {
+  border-bottom: 1px solid#bfbfbf45;
+  margin-top: 22px;
+}
+
+.footer-icon {
+  color: #f9f9f9 !important;
 }
