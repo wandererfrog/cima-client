@@ -1,15 +1,38 @@
-import React from 'react'
+import React from "react";
+import { useQuery } from "@apollo/react-hooks";
+import { gql } from "apollo-boost";
+import ReactHtmlParser from "react-html-parser";
 
-export default class About extends React.Component{
-  render(){
-    return (
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <h3>About</h3>
-          </div>
+const ABOUT = gql`
+  {
+    abouts {
+      text {
+        html
+      }
+    }
+  }
+`;
+
+function About() {
+  const { loading, error, data } = useQuery(ABOUT);
+
+  if (loading) return <p>Loading...</p>;
+
+  if (error) {
+    console.log(error);
+    return <p>Error :(</p>;
+  }
+
+  return (
+    <div className="row page-section" id="about">
+      <div className="container">
+        <div className="section-title">ABOUT CIMA</div>
+        <div className="section-subtitle">
+          {ReactHtmlParser(data.abouts[0].text.html)}
         </div>
       </div>
-    )
-  }
+    </div>
+  );
 }
+
+export default About;

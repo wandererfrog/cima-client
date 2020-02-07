@@ -1,0 +1,23 @@
+.who-avatar {
+  max-width: 182px;
+  border-radius: 5px;
+}
+
+.who-name {
+  font-size: 21px;
+}
+
+.who-description {
+  color: #777777;
+}
+
+.who-link {
+  color: #98d29a !important;
+}
+
+.who-dude-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
