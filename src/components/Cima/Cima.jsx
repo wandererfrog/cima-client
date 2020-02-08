@@ -5,6 +5,7 @@ import "./Cima.css";
 import Features from "./Features/Features";
 import About from "../About/About";
 import Who from "./Who/Who";
+import Footer from "../Footer/Footer";
 
 import AnimatedBtn from "../UIComponents/AnimatedBtn/AnimatedBtn";
 
@@ -38,7 +39,7 @@ export default class Cima extends React.Component {
         <Features />
         <Parallax
           blur={{ min: -15, max: 15 }}
-          bgImage={require("../../assets/bg2.jpeg")}
+          bgImage={require("../../assets/bg2.jpg")}
           bgImageAlt="colors"
           strength={400}
         >
@@ -55,6 +56,7 @@ export default class Cima extends React.Component {
         </Parallax>
         <About />
         <Who />
+        <Footer />
       </div>
     );
   }

@@ -1,0 +1,94 @@
+.cima-footer {
+  height: 390px;
+  width: 100%;
+}
+
+.cima-footer-contact {
+  width: 100%;
+  background-color: #2a2d34;
+  height: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.cima-footer-contact-msg {
+}
+
+.cima-footer-contact-msg-title {
+  color: #a8db7c;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.cima-footer-contact-msg-text {
+  color: #f9f9f9;
+  font-weight: 200;
+}
+
+.cima-footer-contact-msg-btn {
+  width: 120px;
+  height: 36px;
+  border-radius: 3px;
+  font-size: 13px;
+  background-color: #2fa6a8;
+  border: none;
+  color: #f9f9f9;
+}
+
+.cima-footer-info {
+  background-color: #1e2126;
+  padding: 20px;
+}
+
+.cima-footer-brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cima-footer-brand-logo {
+  width: 36px;
+}
+
+.cima-footer-brand-name {
+}
+
+.cima-footer-brand-email {
+  color: #f9f9f9;
+  font-weight: 100;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.cima-footer-links-title {
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 11px;
+}
+
+.cima-footer-link {
+  font-size: 13px;
+  color: #bfbfbf;
+  font-weight: 200;
+  cursor: pointer;
+}
+.cima-footer-link:hover {
+  color: #a8db7c;
+}
+
+.footer-final {
+  border-top: 1px solid#bfbfbf45;
+  margin-top: 22px;
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  padding-top: 10px;
+  padding-right: 10px;
+}
+
+.footer-icon {
+  color: #f9f9f9 !important;
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router";
 import LinkBtn from "./LinkBtn";
+import menuItems from "../../data/links";
 
 import "./Topbar.css";
 
@@ -137,13 +138,5 @@ class Topbar extends React.Component {
     }
   }
 }
-
-const menuItems = [
-  { title: "cima", path: "/cima", inner: true },
-  { title: "features", path: "#features", inner: true },
-  { title: "about", path: "#about", inner: true },
-  { title: "who", path: "#who", inner: true },
-  { title: "app", path: "/app", inner: false }
-];
 
 export default withRouter(Topbar);

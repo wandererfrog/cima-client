@@ -5,14 +5,18 @@
 
 .who-name {
   font-size: 21px;
+  font-weight: 200;
+  margin-top: 15px;
+  color: #444;
 }
 
 .who-description {
-  color: #777777;
+  color: #f1676e;
+  font-weight: 200;
 }
 
 .who-link {
-  color: #98d29a !important;
+  text-decoration: none;
 }
 
 .who-dude-container {
@@ -20,4 +24,5 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }

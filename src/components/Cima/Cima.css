@@ -1,5 +1,5 @@
 .cima-section {
-  height: 720px;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,6 +51,7 @@
 .section-title {
   font-size: 23px;
   text-align: center;
+  margin: 50px;
 }
 
 .section-subtitle {
@@ -62,4 +63,5 @@
 
 .page-section {
   min-height: 430px;
+  margin-bottom: 60px;
 }
