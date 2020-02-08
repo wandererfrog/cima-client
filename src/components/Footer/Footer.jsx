@@ -1,8 +1,11 @@
 import React from "react";
-import "./Footer.css";
-import feather from "feather-icons";
+import { withRouter } from "react-router-dom";
+import { Link } from "react-scroll";
 
-function Footer() {
+import "./Footer.css";
+import menuItems from "../../data/links";
+
+function Footer({ history }) {
   return (
     <div className="cima-footer">
       <div className="cima-footer-contact">
@@ -23,15 +26,40 @@ function Footer() {
               src={require("../../assets/cima-logo.png")}
               className="cima-footer-brand-logo"
             />
-            <span className="cima-footer-brand-name">CIMA</span>
+            {/* <span className="cima-footer-brand-name">CIMA</span> */}
             <span className="cima-footer-brand-email">info@cima.pt</span>
           </div>
           <div className="col-4"></div>
           <div className="col-4 cima-footer-brand">
-            <span className="cima-footer-links-title">COMPANY</span>
-            {links.map(link => (
-              <span className="cima-footer-link">{link.name}</span>
-            ))}
+            <span className="cima-footer-links-title">LINKS</span>
+            {menuItems.map(link => {
+              if (link.inner) {
+                return (
+                  <Link
+                    to={link.title}
+                    spy={true}
+                    smooth={true}
+                    offset={-80}
+                    duration={800}
+                  >
+                    <span className="cima-footer-link">
+                      {link.title.toUpperCase()}
+                    </span>
+                  </Link>
+                );
+              } else {
+                return (
+                  <span
+                    className="cima-footer-link"
+                    onClick={() => {
+                      history.push(link.path);
+                    }}
+                  >
+                    {link.title.toUpperCase()}
+                  </span>
+                );
+              }
+            })}
           </div>
         </div>
         <div className="container row footer-final">
@@ -42,11 +70,4 @@ function Footer() {
   );
 }
 
-export default Footer;
-
-const links = [
-  { name: "Features" },
-  { name: "About" },
-  { name: "Who" },
-  { name: "Search" }
-];
+export default withRouter(Footer);

@@ -39,7 +39,7 @@ export default class Cima extends React.Component {
         <Features />
         <Parallax
           blur={{ min: -15, max: 15 }}
-          bgImage={require("../../assets/bg2.jpeg")}
+          bgImage={require("../../assets/bg2.jpg")}
           bgImageAlt="colors"
           strength={400}
         >

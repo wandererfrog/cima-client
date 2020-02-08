@@ -38,7 +38,6 @@
 }
 
 .cima-footer-info {
-  height: 70%;
   background-color: #1e2126;
   padding: 20px;
 }
@@ -74,11 +73,20 @@
   font-size: 13px;
   color: #bfbfbf;
   font-weight: 200;
+  cursor: pointer;
+}
+.cima-footer-link:hover {
+  color: #a8db7c;
 }
 
 .footer-final {
-  border-bottom: 1px solid#bfbfbf45;
+  border-top: 1px solid#bfbfbf45;
   margin-top: 22px;
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  padding-top: 10px;
+  padding-right: 10px;
 }
 
 .footer-icon {
