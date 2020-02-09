@@ -45,7 +45,7 @@ class Graph extends React.Component {
   render() {
     const { data } = this.props;
     const { filter } = this.state;
-    if (!data) return <h6>No data selected!</h6>;
+    if (!data) return <div className="search-empty">No data selected!</div>;
 
     const newData = this.prepareData(data);
 
@@ -54,7 +54,7 @@ class Graph extends React.Component {
         <ResponsiveContainer width="100%" height={320}>
           <LineChart
             data={newData}
-            margin={{ top: 20, right: -90, left: 0, bottom: 0 }}
+            margin={{ top: 20, right: -120, left: 0, bottom: 0 }}
           >
             <XAxis dataKey="date" fontSize={10} />
             <YAxis fontSize={10} />

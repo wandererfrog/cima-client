@@ -1,6 +1,6 @@
-.search-button{
+.search-button {
   height: 48px;
-  width: 261px;
+  width: 232px;
   text-align: center;
   color: #282928;
   font-size: 1rem;
@@ -14,6 +14,19 @@
   outline: none;
 }
 
-.search-button:hover{
+.search-button:hover {
   background: #cfe4a8;
+}
+
+.search-logo {
+  width: 42px;
+  position: fixed;
+  right: 20px;
+  top: 10px;
+}
+
+.search-empty {
+  margin: 170px;
+  font-size: 1.2em;
+  font-weight: 20;
 }
