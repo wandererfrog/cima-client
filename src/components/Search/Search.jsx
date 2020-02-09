@@ -2,6 +2,7 @@ import React from "react";
 
 import Graph from "./Graph/Graph";
 import SelectionGroup from "./Selects/SelectionGroup";
+import Table from "./Table/Table";
 
 import "./Search.css";
 
@@ -82,9 +83,7 @@ export default class Search extends React.Component {
       return;
 
     const cotas = await apiCalls.getCotas(selection);
-
     console.log(cotas);
-
     this.setState({
       graphData: cotas
     });
@@ -92,8 +91,13 @@ export default class Search extends React.Component {
 
   render() {
     const { selection, data, graphData } = this.state;
+    console.log(selection);
     return (
       <div className="container search-container">
+        <img
+          className="search-logo"
+          src={require("../../assets/cima-logo.png")}
+        />
         <div className="row">
           <div className="col-12">
             <h3>Search</h3>
@@ -115,6 +119,7 @@ export default class Search extends React.Component {
             <Graph data={graphData} />
           </div>
         </div>
+        <Table data={graphData} selection={selection} />
       </div>
     );
   }

@@ -35,6 +35,11 @@
   background-color: #2fa6a8;
   border: none;
   color: #f9f9f9;
+  cursor: pointer;
+}
+
+.cima-footer-contact-msg-btn:hover {
+  background-color: #32adaf;
 }
 
 .cima-footer-info {

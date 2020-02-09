@@ -1,0 +1,16 @@
+.cima-table {
+  width: 100%;
+  margin-bottom: 50px;
+}
+.cima-table-data {
+  text-align: center;
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #e9e5e5;
+}
