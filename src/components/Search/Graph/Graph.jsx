@@ -52,10 +52,7 @@ class Graph extends React.Component {
     return (
       <div className="graph-container">
         <ResponsiveContainer width="100%" height={320}>
-          <LineChart
-            data={newData}
-            margin={{ top: 20, right: -120, left: 0, bottom: 0 }}
-          >
+          <LineChart data={newData}>
             <XAxis dataKey="date" fontSize={10} />
             <YAxis fontSize={10} />
             <Tooltip />

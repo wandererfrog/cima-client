@@ -13,15 +13,19 @@ function Table({ data, selection }) {
       <div className="col-12">
         <h5>Results - {title} </h5>
         <table>
-          <tr>
-            <th className="cima-table-data">Data</th>
-            <th className="cima-table-data">Min</th>
-            <th className="cima-table-data">Mean</th>
-            <th className="cima-table-data">Max</th>
-          </tr>
-          {data.map(row => (
-            <TableRow data={row} />
-          ))}
+          <thead>
+            <tr>
+              <th className="cima-table-data">Data</th>
+              <th className="cima-table-data">Min</th>
+              <th className="cima-table-data">Mean</th>
+              <th className="cima-table-data">Max</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map(row => (
+              <TableRow data={row} />
+            ))}
+          </tbody>
         </table>
       </div>
     </div>
