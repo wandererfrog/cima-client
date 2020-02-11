@@ -3,6 +3,8 @@ import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
 import ReactHtmlParser from "react-html-parser";
 
+import "./About.css";
+
 const ABOUT = gql`
   {
     abouts {

@@ -63,7 +63,9 @@ function Footer({ history }) {
           </div>
         </div>
         <div className="container row footer-final">
-          <i className="footer-icon" data-feather="github"></i>
+          <a href="https://github.com/5storm">
+            <i className="footer-icon" data-feather="github"></i>
+          </a>
         </div>
       </div>
     </div>
