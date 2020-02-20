@@ -8,8 +8,8 @@ import menuItems from "../../data/links";
 function Footer({ history }) {
   return (
     <div className="cima-footer">
-      <div className="cima-footer-contact">
-        <div className="cima-footer-contact-msg">
+      <div className="cima-footer-contact row">
+        <div className="cima-footer-contact-msg col-8-sm">
           <div className="cima-footer-contact-msg-title">
             Precisa de algo parecido?
           </div>
@@ -17,12 +17,14 @@ function Footer({ history }) {
             Nós podemos ajuda-lo a entender a Data da sua empresa.
           </div>
         </div>
-        <a
-          className="cima-footer-contact-msg-btn"
-          href="mailto:bspmendonca@gmail.com"
-        >
-          Contacte-nos
-        </a>
+        <div className="col-4-sm cima-footer-contact-btn-container">
+          <a
+            className="cima-footer-contact-msg-btn"
+            href="mailto:bspmendonca@gmail.com"
+          >
+            Contacte-nos
+          </a>
+        </div>
       </div>
       <div className="cima-footer-info">
         <div className="container row">

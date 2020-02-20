@@ -9,11 +9,12 @@
   height: 30%;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 }
 
 .cima-footer-contact-msg {
+  text-align: center;
 }
 
 .cima-footer-contact-msg-title {
@@ -26,7 +27,11 @@
   color: #f9f9f9;
   font-weight: 200;
 }
-
+.cima-footer-contact-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .cima-footer-contact-msg-btn {
   width: 120px;
   height: 36px;
