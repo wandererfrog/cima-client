@@ -17,7 +17,7 @@ class DatePicker extends Component {
 
   render() {
     const { selection, onUpdateSelect, title, name } = this.props;
-    console.log(selection);
+
     return (
       <div className="select-container">
         <div className="select-title">{title}</div>
