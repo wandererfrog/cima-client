@@ -11,7 +11,7 @@ function Table({ data, selection }) {
   return (
     <div className="row">
       <div className="col-12">
-        <h5>Results - {title} </h5>
+        <h5>Resultados - {title} </h5>
         <table>
           <thead>
             <tr>

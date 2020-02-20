@@ -32,7 +32,7 @@ function Who() {
   return (
     <div className="row page-section" id="who">
       <div className="container">
-        <div className="section-title">WHO WE ARE:</div>
+        <div className="section-title">Quem somos:</div>
         {data.whoes.map((dude, idx) => (
           <WhoDude who={dude} />
         ))}

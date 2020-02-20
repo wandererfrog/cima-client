@@ -11,13 +11,18 @@ function Footer({ history }) {
       <div className="cima-footer-contact">
         <div className="cima-footer-contact-msg">
           <div className="cima-footer-contact-msg-title">
-            Need something done?
+            Precisa de algo parecido?
           </div>
           <div className="cima-footer-contact-msg-text">
-            We can help you with data analysis and visualization.
+            Nós podemos ajuda-lo a entender a Data da sua empresa.
           </div>
         </div>
-        <button className="cima-footer-contact-msg-btn">Contact us</button>
+        <a
+          className="cima-footer-contact-msg-btn"
+          href="mailto:bspmendonca@gmail.com"
+        >
+          Contacte-nos
+        </a>
       </div>
       <div className="cima-footer-info">
         <div className="container row">
@@ -27,7 +32,9 @@ function Footer({ history }) {
               className="cima-footer-brand-logo"
             />
             {/* <span className="cima-footer-brand-name">CIMA</span> */}
-            <span className="cima-footer-brand-email">info@cima.pt</span>
+            <span className="cima-footer-brand-email">
+              bspmendonca@gmail.com
+            </span>
           </div>
           <div className="col-4"></div>
           <div className="col-4 cima-footer-brand">
@@ -61,11 +68,6 @@ function Footer({ history }) {
               }
             })}
           </div>
-        </div>
-        <div className="container row footer-final">
-          <a href="https://github.com/5storm">
-            <i className="footer-icon" data-feather="github"></i>
-          </a>
         </div>
       </div>
     </div>

@@ -45,7 +45,12 @@ class Graph extends React.Component {
   render() {
     const { data } = this.props;
     const { filter } = this.state;
-    if (!data) return <div className="search-empty">No data selected!</div>;
+    if (!data)
+      return (
+        <div className="search-empty">
+          Altere os parâmetros e clique "Pesquisa"
+        </div>
+      );
 
     const newData = this.prepareData(data);
 

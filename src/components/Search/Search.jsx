@@ -37,11 +37,13 @@ export default class Search extends React.Component {
 
   async componentDidMount() {
     const groups = await apiCalls.getGroups();
-    this.setState({
-      data: {
-        groups: groups.map(g => ({ value: g.id, label: g.name }))
-      }
-    });
+    if (groups) {
+      this.setState({
+        data: {
+          groups: groups.map(g => ({ value: g.id, label: g.name }))
+        }
+      });
+    }
   }
 
   onUpdateSelect(name, evt) {
@@ -67,7 +69,6 @@ export default class Search extends React.Component {
     const { selection, data } = this.state;
     const newStateObj = await onUpdateGetKeyList(name, selection, data);
     //Get data from API
-    console.log("State:", newStateObj);
     this.setState(newStateObj);
   }
 
@@ -83,7 +84,6 @@ export default class Search extends React.Component {
       return;
 
     const cotas = await apiCalls.getCotas(selection);
-    console.log(cotas);
     this.setState({
       graphData: cotas
     });
@@ -91,7 +91,7 @@ export default class Search extends React.Component {
 
   render() {
     const { selection, data, graphData } = this.state;
-    console.log(selection);
+
     return (
       <div className="container search-container">
         <img
@@ -100,7 +100,7 @@ export default class Search extends React.Component {
         />
         <div className="row">
           <div className="col-12">
-            <h3>Search</h3>
+            <h3>Pesquisa</h3>
           </div>
           <div className="col-4">
             <SelectionGroup
@@ -112,7 +112,7 @@ export default class Search extends React.Component {
               className="search-button"
               onClick={this.getGraphData.bind(this)}
             >
-              Search
+              Pesquisa
             </button>
           </div>
           <div className="col-8">

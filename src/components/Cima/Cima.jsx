@@ -30,7 +30,7 @@ export default class Cima extends React.Component {
               {"Centro de Informação dos Mercados Agricolas".toUpperCase()}
             </div>
             <AnimatedBtn
-              title="search"
+              title="Consulte"
               className="cima-section-button"
               icon="fas fa-angle-double-right"
             />
@@ -45,7 +45,7 @@ export default class Cima extends React.Component {
         >
           <div className="cima-section">
             <div className="cima-subtitle">
-              {"WORK BETTER WITH BETTER DATA".toUpperCase()}
+              {"TRABALHE MELHOR COM MELHOR INFORMAÇÃO".toUpperCase()}
             </div>
             <AnimatedBtn
               title="prove"

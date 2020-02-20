@@ -11,35 +11,35 @@ class SelectionGroup extends Component {
     return (
       <div>
         <SelectItem
-          title="Groups"
+          title="Grupos"
           data={data.groups}
           name="groups"
           selection={selection.groups}
           onUpdateSelect={onUpdateSelect.bind(this)}
         />
         <SelectItem
-          title="Species"
+          title="Especies"
           data={data.species}
           name="species"
           selection={selection.species}
           onUpdateSelect={onUpdateSelect.bind(this)}
         />
         <SelectItem
-          title="Variety"
+          title="Variedades"
           data={data.variety}
           name="variety"
           selection={selection.variety}
           onUpdateSelect={onUpdateSelect.bind(this)}
         />
         <SelectItem
-          title="Category"
+          title="Categorias"
           data={data.category}
           name="category"
           selection={selection.category}
           onUpdateSelect={onUpdateSelect.bind(this)}
         />
         <SelectItem
-          title="Region"
+          title="Regiões"
           data={data.region}
           name="region"
           selection={selection.region}
@@ -50,14 +50,14 @@ class SelectionGroup extends Component {
           selection={selection.from}
           name="from"
           onUpdateSelect={onUpdateSelect.bind(this)}
-          title="From"
+          title="Desde"
         />
         <DatePicker
           selection={selection.to}
           minimumDate={selection.from}
           name="to"
           onUpdateSelect={onUpdateSelect.bind(this)}
-          title="To"
+          title="Até"
         />
       </div>
     );

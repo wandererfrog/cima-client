@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 
 function LinkBtn({ entry, onClick, path }) {
   if (entry.inner) {
@@ -7,7 +7,7 @@ function LinkBtn({ entry, onClick, path }) {
       <div className={`topbar-item-text`}>
         <Link
           activeClass="topbar-item-text-active"
-          to={entry.title}
+          to={entry.to}
           spy={true}
           smooth={true}
           offset={-80}

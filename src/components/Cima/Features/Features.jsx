@@ -31,8 +31,7 @@ function Features() {
         <div className="container">
           <div className="section-title">FEATURES:</div>
           <div className="section-subtitle">
-            Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
-            consectetur, adipisci velit...
+            Algumas das importantes features do cima.
           </div>
           {data.features.map(f => {
             return (

@@ -28,7 +28,7 @@ function About() {
   return (
     <div className="row page-section" id="about">
       <div className="container">
-        <div className="section-title">ABOUT CIMA</div>
+        <div className="section-title">SOBRE O CIMA</div>
         <div className="section-subtitle">
           {ReactHtmlParser(data.abouts[0].text.html)}
         </div>
