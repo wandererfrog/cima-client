@@ -9,21 +9,23 @@ function Footer({ history }) {
   return (
     <div className="cima-footer">
       <div className="cima-footer-contact row">
-        <div className="cima-footer-contact-msg col-8-sm">
-          <div className="cima-footer-contact-msg-title">
-            Precisa de algo parecido?
+        <div className="container">
+          <div className="cima-footer-contact-msg col-8-sm">
+            <div className="cima-footer-contact-msg-title">
+              Precisa de algo parecido?
+            </div>
+            <div className="cima-footer-contact-msg-text">
+              Nós podemos ajuda-lo a entender a Data da sua empresa.
+            </div>
           </div>
-          <div className="cima-footer-contact-msg-text">
-            Nós podemos ajuda-lo a entender a Data da sua empresa.
+          <div className="col-4-sm cima-footer-contact-btn-container">
+            <a
+              className="cima-footer-contact-msg-btn"
+              href="mailto:bspmendonca@gmail.com"
+            >
+              Contacte-nos
+            </a>
           </div>
-        </div>
-        <div className="col-4-sm cima-footer-contact-btn-container">
-          <a
-            className="cima-footer-contact-msg-btn"
-            href="mailto:bspmendonca@gmail.com"
-          >
-            Contacte-nos
-          </a>
         </div>
       </div>
       <div className="cima-footer-info">
