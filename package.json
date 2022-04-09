@@ -9,7 +9,7 @@
     "feather-icons": "^4.19.0",
     "graphql": "^14.6.0",
     "history": "^4.7.2",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "nock": "^11.7.2",
     "react": "0.0.0-241c4467e",
     "react-dates": "^19.0.3",
